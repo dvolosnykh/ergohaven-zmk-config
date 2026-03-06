@@ -231,85 +231,85 @@
 
         q1_combo {
             bindings = <&q1>;
-            key-positions = <14 13>;
+            key-positions = <2 1>;
             layers = <4>;
         };
 
         q2_combo {
             bindings = <&q2>;
-            key-positions = <15 13>;
+            key-positions = <3 1>;
             layers = <4>;
         };
 
         q3_combo {
             bindings = <&q3>;
-            key-positions = <16 13>;
+            key-positions = <4 1>;
             layers = <4>;
         };
 
         q4_combo {
             bindings = <&q4>;
-            key-positions = <26 13>;
+            key-positions = <14 1>;
             layers = <4>;
         };
 
         q1_combo_ru {
             bindings = <&q1_ru>;
-            key-positions = <14 13>;
+            key-positions = <2 1>;
             layers = <5>;
         };
 
         q2_combo_ru {
             bindings = <&q2_ru>;
-            key-positions = <15 13>;
+            key-positions = <3 1>;
             layers = <5>;
         };
 
         q3_combo_ru {
             bindings = <&q3_ru>;
-            key-positions = <16 13>;
+            key-positions = <4 1>;
             layers = <5>;
         };
 
         q4_combo_ru {
             bindings = <&q4_ru>;
-            key-positions = <26 13>;
+            key-positions = <14 1>;
             layers = <5>;
         };
 
         evo_1_combo {
             bindings = <&evo_1>;
-            key-positions = <22 19>;
+            key-positions = <10 7>;
             layers = <4>;
         };
 
         evo_2_combo {
             bindings = <&evo_2>;
-            key-positions = <22 20>;
+            key-positions = <10 8>;
             layers = <4>;
         };
 
         evo_3_combo {
             bindings = <&evo_3>;
-            key-positions = <22 21>;
+            key-positions = <10 9>;
             layers = <4>;
         };
 
         evo_1_combo_ru {
             bindings = <&evo_1_ru>;
-            key-positions = <22 19>;
+            key-positions = <10 7>;
             layers = <5>;
         };
 
         evo_2_combo_ru {
             bindings = <&evo_2_ru>;
-            key-positions = <22 20>;
+            key-positions = <10 8>;
             layers = <5>;
         };
 
         evo_3_combo_ru {
             bindings = <&evo_3_ru>;
-            key-positions = <22 21>;
+            key-positions = <10 9>;
             layers = <5>;
         };
     };
