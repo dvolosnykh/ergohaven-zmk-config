@@ -249,6 +249,33 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
+
+        layer_activate: layer_activate {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "LAYER_ACTIVATE";
+            #binding-cells = <1>;
+        };
+
+        layer_deactivate: layer_deactivate {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "LAYER_DEACTIVATE";
+            #binding-cells = <1>;
+            toggle-mode = "off";
+        };
+
+        outs: outs {
+            compatible = "zmk,behavior-tap-dance";
+            label = "OUTS";
+            #binding-cells = <0>;
+            bindings = <&out_bluetooth>, <&out_usb>;
+        };
+
+        pipe_cmd_dash: pipe_cmd_dash {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PIPE_CMD_DASH";
+            #binding-cells = <0>;
+            bindings = <&mt RGUI PIPE>, <&kp KP_MINUS>;
+        };
     };
 
     combos {
@@ -514,6 +541,20 @@
             bindings = <&to_en &evo_3 &to_ru>;
             label = "EVO_3_RU";
         };
+
+        out_bluetooth: out_bluetooth {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&out OUT_BLE &layer_deactivate 7>;
+            label = "OUT_BLUETOOTH";
+        };
+
+        out_usb: out_usb {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&out OUT_USB &layer_activate 7>;
+            label = "OUT_USB";
+        };
     };
 
     keymap {
@@ -553,7 +594,7 @@
 
         sym_common {
             bindings = <
-&trans  &trans  &sec_kp_kp LC(KP_N1) N1  &sec_kp_kp LC(KP_N2) N2  &sec_kp_kp LC(KP_N3) N3  &plus_alt                                      &trans        &trans  &trans   &none                   &none      &kp DELETE
+&trans  &trans  &sec_kp_kp LC(KP_N1) N1  &sec_kp_kp LC(KP_N2) N2  &sec_kp_kp LC(KP_N3) N3  &plus_alt                                      &trans        &trans  &trans   &none                   &none      &none
 &trans  &trans  &sec_kp_kp LC(KP_N4) N4  &sec_kp_kp LC(KP_N5) N5  &sec_kp_kp LC(KP_N6) N6  &kp MINUS                                      &trans        &trans  &trans   &parenth                &trans     &trans
 &trans  &trans  &sec_kp_kp LC(KP_N7) N7  &sec_kp_kp LC(KP_N8) N8  &sec_kp_kp LC(KP_N9) N9  &sec_kp_kp LC(KP_N0) N0  &kp KP_DOT    &trans  &kp KP_SLASH  &trans  &eq_not  &sec_kp_kp TILDE UNDER  &sent_end  &sk LALT
                                                                   &trans                   &mo 6                    &trans        &trans  &trans        &trans
@@ -581,10 +622,10 @@
 
         adj {
             bindings = <
-&bt BT_CLR    &none  &sec_kp_kp LA(LS(NUMBER_1)) F1  &sec_kp_kp LA(LS(NUMBER_2)) F2   &sec_kp_kp LA(LS(NUMBER_3)) F3  &sec_kp_kp LA(LS(NUMBER_4)) F4                            &kp LA(R)       &sec_kp_kp LA(R) LA(A)          &sec_kp_kp LA(D) LA(V)  &kp LA(D)   &none  &bt BT_SEL 2
-&none         &none  &sec_kp_kp LA(LS(NUMBER_5)) F5  &sec_kp_kp LA(LS(NUMBER_6)) F6   &sec_kp_kp LA(LS(NUMBER_7)) F7  &sec_kp_kp LA(LS(NUMBER_8)) F8                            &kp C_PREVIOUS  &kp C_VOLUME_DOWN               &kp C_VOLUME_UP         &kp C_NEXT  &none  &bt BT_SEL 1
-&out OUT_TOG  &none  &sec_kp_kp LA(LS(NUMBER_9)) F9  &sec_kp_kp LA(LS(NUMBER_0)) F10  &sec_kp_kp LA(LS(MINUS)) F11    &sec_kp_kp LA(LS(EQUAL)) F12    &switch_en    &switch_ru  &none           &sec_kp_kp K_MUTE C_PLAY_PAUSE  &none                   &tog 7      &none  &bt BT_SEL 0
-                                                                                      &trans                          &trans                          &trans        &trans      &trans          &trans
+&bt BT_CLR  &none  &sec_kp_kp LA(LS(NUMBER_1)) F1  &sec_kp_kp LA(LS(NUMBER_2)) F2   &sec_kp_kp LA(LS(NUMBER_3)) F3  &sec_kp_kp LA(LS(NUMBER_4)) F4                            &kp LA(R)       &sec_kp_kp LA(R) LA(A)          &sec_kp_kp LA(D) LA(V)  &kp LA(D)   &none  &bt BT_SEL 2
+&none       &none  &sec_kp_kp LA(LS(NUMBER_5)) F5  &sec_kp_kp LA(LS(NUMBER_6)) F6   &sec_kp_kp LA(LS(NUMBER_7)) F7  &sec_kp_kp LA(LS(NUMBER_8)) F8                            &kp C_PREVIOUS  &kp C_VOLUME_DOWN               &kp C_VOLUME_UP         &kp C_NEXT  &none  &bt BT_SEL 1
+&outs       &none  &sec_kp_kp LA(LS(NUMBER_9)) F9  &sec_kp_kp LA(LS(NUMBER_0)) F10  &sec_kp_kp LA(LS(MINUS)) F11    &sec_kp_kp LA(LS(EQUAL)) F12    &switch_en    &switch_ru  &none           &sec_kp_kp K_MUTE C_PLAY_PAUSE  &none                   &none       &none  &bt BT_SEL 0
+                                                                                    &trans                          &trans                          &trans        &trans      &trans          &trans
             >;
 
             display-name = "Adjust";
@@ -602,18 +643,18 @@
         ctrl_en {
             bindings = <
 &trans  &trans  &trans  &trans  &trans    &trans                    &trans  &trans    &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans                    &trans  &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans                    &trans  &trans    &trans  &trans  &trans  &pipe_cmd_dash
 &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans  &trans  &trans    &trans  &trans  &trans  &trans
-                                &ctrl_en  &trans  &trans    &trans  &trans  &ctrl_en
+                                &ctrl_ru  &trans  &trans    &trans  &trans  &ctrl_ru
             >;
         };
 
         ctrl_ru {
             bindings = <
 &trans  &trans  &trans  &trans  &trans    &trans                    &trans  &trans    &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans                    &trans  &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans                    &trans  &trans    &trans  &trans  &trans  &mt RGUI RU_CYRILLIC_E
 &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans  &trans  &trans    &trans  &trans  &trans  &trans
-                                &ctrl_ru  &trans  &trans    &trans  &trans  &ctrl_ru
+                                &ctrl_en  &trans  &trans    &trans  &trans  &ctrl_en
             >;
         };
     };
@@ -638,7 +679,7 @@
 
         swap_cmd_ctrl_ru {
             if-layers = <1 7>;
-            then-layer = <9>;
+            then-layer = <10>;
         };
     };
 };
