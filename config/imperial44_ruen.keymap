@@ -544,7 +544,7 @@
             bindings = <
 &kp LC(BACKSLASH)  &none      &kp LC(B)               &kp LC(W)               &kp LA(D)               &kp LC(U)                                                                           &kp LC(LA(H))                 &kp LC(LA(J))             &kp LC(LA(K))         &kp LC(LA(L))                   &kp DELETE  &kp LA(BACKSPACE)
 &none              &none      &kp LC(F)               &sec_kp_kp LC(R) LC(P)  &kp LC(N)               &kp LC(D)                                                                           &sec_kp_kp LG(LEFT) LEFT      &sec_kp_kp LG(DOWN) DOWN  &sec_kp_kp LG(UP) UP  &sec_kp_kp LG(RIGHT) RIGHT      &none       &none
-&none              &kp LC(Q)  &sec_kp_kp LC(U) LC(B)  &sec_kp_kp LC(A) LA(B)  &sec_kp_kp LC(E) LA(F)  &sec_kp_kp LC(K) LC(F)  &sec_kp_kp LC(Z) LC(C)    &sec_kp_kp LG(LS(N5)) LG(LS(N4))  &sec_kp_kp LG(LEFT) LA(LEFT)  &kp LA(J)                 &kp LA(K)             &sec_kp_kp LG(RIGHT) LA(RIGHT)  &kp LC(X)   &none
+&trans             &kp LC(Q)  &sec_kp_kp LC(U) LC(B)  &sec_kp_kp LC(A) LA(B)  &sec_kp_kp LC(E) LA(F)  &sec_kp_kp LC(K) LC(F)  &sec_kp_kp LC(Z) LC(C)    &sec_kp_kp LG(LS(N5)) LG(LS(N4))  &sec_kp_kp LG(LEFT) LA(LEFT)  &kp LA(J)                 &kp LA(K)             &sec_kp_kp LG(RIGHT) LA(RIGHT)  &kp LC(X)   &trans
                                                                               &trans                  &trans                  &trans                    &trans                            &mo 6                         &trans
             >;
 
