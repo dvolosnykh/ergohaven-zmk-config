@@ -198,9 +198,9 @@
             bindings = <&kp PLUS>, <&kp LA(PLUS)>;
         };
 
-        shift_at_ru: shift_at_ru {
+        mt_en: mt_en {
             compatible = "zmk,behavior-hold-tap";
-            label = "SHIFT_AT_RU";
+            label = "MT_EN";
             bindings = <&kp>, <&en>;
 
             #binding-cells = <2>;
@@ -613,10 +613,10 @@
         ru {
             display-name = "Ru";
             bindings = <
-&trans                   &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &twin_e                                                             &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE  &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA  &kp RU_CYRILLIC_ZE   &trans
-&trans                   &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                                                  &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O    &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE     &kp RU_CYRILLIC_ZHE  &mt RCTRL RU_CYRILLIC_E
-&shift_grave_ru LSHFT 0  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I   &kp AMPERSAND       &kp CARET                   &kp RU_CYRILLIC_TE  &twin_sign           &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU     &kp RU_CYRILLIC_HA   &shift_at_ru RSHFT AT
-                                                                                            &cmd_lang           &lt 2 SPACE         &dash_alt_hyphen    &sec_kp_kp LG(ENTER) ENTER  &lt 3 SPACE         &cmd_lang
+&trans              &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &twin_e                                         &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE  &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA  &kp RU_CYRILLIC_ZE   &trans
+&trans              &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                              &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O    &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE     &kp RU_CYRILLIC_ZHE  &mt RCTRL RU_CYRILLIC_E
+&mt_en LSHFT GRAVE  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I   &kp AMPERSAND    &kp CARET  &kp RU_CYRILLIC_TE  &twin_sign           &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU     &kp RU_CYRILLIC_HA   &mt_en RSHFT AT
+                                                                                       &trans              &trans              &trans           &trans     &trans              &trans
             >;
         };
 
