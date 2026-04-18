@@ -612,7 +612,7 @@
         ru_sym {
             bindings = <
 &swi_ru  &en LS(Q)       &trans  &trans  &trans  &trans                                                &en AMPERSAND               &en PIPE          &braces_ru    &trans  &trans      &trans
-&trans   &num HASH HASH  &trans  &trans  &trans  &trans                                                &sec_kp_kp DOLLAR ASTERISK  &caret_dollar_ru  &brackets_ru  &trans  &colons_ru  &quotes_ru
+&trans   &num HASH HASH  &trans  &trans  &trans  &trans                                                &sec_kp_en DOLLAR ASTERISK  &caret_dollar_ru  &brackets_ru  &trans  &colons_ru  &quotes_ru
 &trans   &en DOLLAR      &trans  &trans  &trans  &trans  &trans    &sec_en_en LC(BACKSLASH) BACKSLASH  &trans                      &lt_gt_ru         &trans        &trans  &trans      &trans
                                          &trans  &trans  &trans    &trans                              &trans                      &trans
             >;
