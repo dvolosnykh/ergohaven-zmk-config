@@ -272,85 +272,85 @@
         q1_combo {
             bindings = <&q1>;
             key-positions = <2 1>;
-            layers = <5>;
+            layers = <6>;
         };
 
         q2_combo {
             bindings = <&q2>;
             key-positions = <3 1>;
-            layers = <5>;
+            layers = <6>;
         };
 
         q3_combo {
             bindings = <&q3>;
             key-positions = <4 1>;
-            layers = <5>;
+            layers = <6>;
         };
 
         q4_combo {
             bindings = <&q4>;
             key-positions = <14 1>;
-            layers = <5>;
+            layers = <6>;
         };
 
         q1_combo_ru {
             bindings = <&q1_ru>;
             key-positions = <2 1>;
-            layers = <6>;
+            layers = <7>;
         };
 
         q2_combo_ru {
             bindings = <&q2_ru>;
             key-positions = <3 1>;
-            layers = <6>;
+            layers = <7>;
         };
 
         q3_combo_ru {
             bindings = <&q3_ru>;
             key-positions = <4 1>;
-            layers = <6>;
+            layers = <7>;
         };
 
         q4_combo_ru {
             bindings = <&q4_ru>;
             key-positions = <14 1>;
-            layers = <6>;
+            layers = <7>;
         };
 
         evo_1_combo {
             bindings = <&evo_1>;
             key-positions = <10 7>;
-            layers = <5>;
+            layers = <6>;
         };
 
         evo_2_combo {
             bindings = <&evo_2>;
             key-positions = <10 8>;
-            layers = <5>;
+            layers = <6>;
         };
 
         evo_3_combo {
             bindings = <&evo_3>;
             key-positions = <10 9>;
-            layers = <5>;
+            layers = <6>;
         };
 
         evo_1_combo_ru {
             bindings = <&evo_1_ru>;
             key-positions = <10 7>;
-            layers = <6>;
+            layers = <7>;
         };
 
         evo_2_combo_ru {
             bindings = <&evo_2_ru>;
             key-positions = <10 8>;
-            layers = <6>;
+            layers = <7>;
         };
 
         evo_3_combo_ru {
             bindings = <&evo_3_ru>;
             key-positions = <10 9>;
-            layers = <6>;
+            layers = <7>;
         };
     };
 
@@ -544,7 +544,7 @@
 &sec_kp_kp LC(D) ESCAPE  &kp Q  &kp W  &kp E  &kp R      &kp T                                                        &kp Y        &kp U      &kp I    &kp O         &kp P      &kp BACKSPACE
 &mt LCTRL TAB            &kp A  &kp S  &kp D  &kp F      &kp G                                                        &kp H        &kp J      &kp K    &kp L         &colons    &pipe_ctrl_dash
 &mt LSHFT GRAVE          &kp Z  &kp X  &kp C  &kp V      &kp B        &kp DOT             &kp COMMA                   &kp N        &kp M      &eq_not  &under_tilde  &sent_end  &mt RSHFT AT
-                                              &cmd_lang  &lt 4 SPACE  &dash_alt_hyphen    &sec_kp_kp LG(ENTER) ENTER  &lt 5 SPACE  &cmd_lang
+                                              &cmd_lang  &lt 4 SPACE  &dash_alt_hyphen    &sec_kp_kp LG(ENTER) ENTER  &lt 6 SPACE  &cmd_lang
             >;
 
             display-name = "En";
@@ -578,15 +578,24 @@
             >;
         };
 
-        nav {
+        nav_mac {
             bindings = <
-&kp LC(BACKSLASH)  &none  &kp LC(B)               &kp LC(W)               &kp LA(D)               &kp LC(U)                                                                           &kp LC(LA(H))                 &kp LC(LA(J))             &kp LC(LA(K))         &kp LC(LA(L))                   &kp DELETE  &kp LA(BACKSPACE)
-&none              &none  &kp LC(F)               &sec_kp_kp LC(R) LC(P)  &kp LC(N)               &kp LC(D)                                                                           &sec_kp_kp LG(LEFT) LEFT      &sec_kp_kp LG(DOWN) DOWN  &sec_kp_kp LG(UP) UP  &sec_kp_kp LG(RIGHT) RIGHT      &none       &none
-&trans             &none  &sec_kp_kp LC(U) LC(B)  &sec_kp_kp LC(A) LA(B)  &sec_kp_kp LC(E) LA(F)  &sec_kp_kp LC(K) LC(F)  &sec_kp_kp LC(Z) LC(C)    &sec_kp_kp LG(LS(N5)) LG(LS(N4))  &sec_kp_kp LG(LEFT) LA(LEFT)  &kp LA(J)                 &kp LA(K)             &sec_kp_kp LG(RIGHT) LA(RIGHT)  &kp LC(X)   &trans
-                                                                          &trans                  &trans                  &trans                    &trans                            &mo 7                         &trans
+&kp LC(BACKSLASH)  &none  &kp LC(B)               &kp LC(W)               &kp LA(D)               &kp LC(U)                                                                           &none                     &none                         &none                           &none                       &kp DELETE      &trans
+&none              &none  &kp LC(F)               &sec_kp_kp LC(R) LC(P)  &kp LC(N)               &kp LC(D)                                                                           &sec_kp_kp LG(LEFT) LEFT  &sec_kp_kp LG(DOWN) DOWN      &sec_kp_kp LG(UP) UP            &sec_kp_kp LG(RIGHT) RIGHT  &kp LA(DELETE)  &kp LA(BACKSPACE)
+&trans             &none  &sec_kp_kp LC(U) LC(B)  &sec_kp_kp LC(A) LA(B)  &sec_kp_kp LC(E) LA(F)  &sec_kp_kp LC(K) LC(F)  &sec_kp_kp LC(Z) LC(C)    &sec_kp_kp LG(LS(N5)) LG(LS(N4))  &kp LEFT                  &sec_kp_kp LG(LEFT) LA(LEFT)  &sec_kp_kp LG(RIGHT) LA(RIGHT)  &kp RIGHT                   &none           &trans
+                                                                          &trans                  &trans                  &trans                    &trans                            &mo 8                     &trans
             >;
 
-            display-name = "Nav";
+            display-name = "Nav_Mac";
+        };
+
+        nav_other {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                                                    &trans                    &trans               &trans              &trans                      &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                    &sec_kp_kp LA(LEFT) LEFT  &sec_kp_kp END DOWN  &sec_kp_kp HOME UP  &sec_kp_kp LA(RIGHT) RIGHT  &kp LC(DELETE)  &kp LC(BACKSPACE)
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &sec_kp_kp PRINTSCREEN LS(PRINTSCREEN)  &trans                    &kp LC(LEFT)         &kp LC(RIGHT)       &trans                      &trans          &trans
+                                &trans  &trans  &trans    &trans                                  &trans                    &trans
+            >;
         };
 
         en_sym {
@@ -594,7 +603,7 @@
 &swi    &kp LS(Q)   &sec_kp_kp LC(KP_N1) N1  &sec_kp_kp LC(KP_N2) N2  &sec_kp_kp LC(KP_N3) N3  &plus_alt                                                                  &kp AMPERSAND                &kp PIPE       &braces    &none                   &none      &none
 &trans  &kp HASH    &sec_kp_kp LC(KP_N4) N4  &sec_kp_kp LC(KP_N5) N5  &sec_kp_kp LC(KP_N6) N6  &kp MINUS                                                                  &sec_kp_kp PERCENT ASTERISK  &caret_dollar  &brackets  &parenth                &colons    &quotes
 &trans  &kp DOLLAR  &sec_kp_kp LC(KP_N7) N7  &sec_kp_kp LC(KP_N8) N8  &sec_kp_kp LC(KP_N9) N9  &sec_kp_kp LC(KP_N0) N0  &kp KP_DOT    &sec_kp_kp LC(BACKSLASH) BACKSLASH  &kp KP_SLASH                 &lt_gt         &eq_not    &sec_kp_kp TILDE UNDER  &sent_end  &sk LALT
-                                                                      &trans                   &mo 7                    &trans        &trans                              &trans                       &trans
+                                                                      &trans                   &mo 8                    &trans        &trans                              &trans                       &trans
             >;
         };
 
@@ -622,14 +631,19 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
-        add_comm_sym_ru {
-            if-layers = <1 5>;
-            then-layer = <6>;
+        override_sym_for_ru {
+            if-layers = <1 6>;
+            then-layer = <7>;
         };
 
         fix_ru_for_other {
             if-layers = <1 2>;
             then-layer = <3>;
+        };
+
+        override_nav_for_other {
+            if-layers = <4 2>;
+            then-layer = <5>;
         };
     };
 };
