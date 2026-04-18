@@ -603,7 +603,7 @@
         en_sym {
             bindings = <
 &swi    &kp LS(Q)   &sec_kp_kp LC(KP_N1) N1  &sec_kp_kp LC(KP_N2) N2  &sec_kp_kp LC(KP_N3) N3  &plus_alt                                                                  &kp AMPERSAND                &kp PIPE       &braces    &none                   &none      &none
-&trans  &kp HASH    &sec_kp_kp LC(KP_N4) N4  &sec_kp_kp LC(KP_N5) N5  &sec_kp_kp LC(KP_N6) N6  &kp MINUS                                                                  &sec_kp_en PERCENT ASTERISK  &caret_dollar  &brackets  &parenth                &colons    &quotes
+&trans  &kp HASH    &sec_kp_kp LC(KP_N4) N4  &sec_kp_kp LC(KP_N5) N5  &sec_kp_kp LC(KP_N6) N6  &kp MINUS                                                                  &sec_kp_kp PERCENT ASTERISK  &caret_dollar  &brackets  &parenth                &colons    &quotes
 &trans  &kp DOLLAR  &sec_kp_kp LC(KP_N7) N7  &sec_kp_kp LC(KP_N8) N8  &sec_kp_kp LC(KP_N9) N9  &sec_kp_kp LC(KP_N0) N0  &kp KP_DOT    &sec_kp_kp LC(BACKSLASH) BACKSLASH  &kp KP_SLASH                 &lt_gt         &eq_not    &sec_kp_kp TILDE UNDER  &sent_end  &sk LALT
                                                                       &trans                   &mo 7                    &trans        &trans                              &trans                       &trans
             >;
@@ -612,7 +612,7 @@
         ru_sym {
             bindings = <
 &swi_ru  &en LS(Q)       &trans  &trans  &trans  &trans                                                &en AMPERSAND               &en PIPE          &braces_ru    &trans  &trans      &trans
-&trans   &num HASH HASH  &trans  &trans  &trans  &trans                                                &sec_kp_en DOLLAR ASTERISK  &caret_dollar_ru  &brackets_ru  &trans  &colons_ru  &quotes_ru
+&trans   &num HASH HASH  &trans  &trans  &trans  &trans                                                &sec_kp_kp DOLLAR ASTERISK  &caret_dollar_ru  &brackets_ru  &trans  &colons_ru  &quotes_ru
 &trans   &en DOLLAR      &trans  &trans  &trans  &trans  &trans    &sec_en_en LC(BACKSLASH) BACKSLASH  &trans                      &lt_gt_ru         &trans        &trans  &trans      &trans
                                          &trans  &trans  &trans    &trans                              &trans                      &trans
             >;
