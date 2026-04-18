@@ -351,7 +351,7 @@
         to_ru: to_ru {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LC(LA(LG(KP_NUMBER_2))))>;
+            bindings = <&toggle_lang>;
             label = "TO_RU";
             wait-ms = <0>;
             tap-ms = <30>;
@@ -360,7 +360,7 @@
         to_en: to_en {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LA(LC(LG(KP_NUMBER_1))))>;
+            bindings = <&toggle_lang>;
             label = "TO_EN";
             wait-ms = <0>;
             tap-ms = <30>;
@@ -620,10 +620,10 @@
 
         adjust {
             bindings = <
-&bt BT_CLR  &none  &sec_kp_kp LA(LS(NUMBER_1)) F1  &sec_kp_kp LA(LS(NUMBER_2)) F2   &sec_kp_kp LA(LS(NUMBER_3)) F3  &sec_kp_kp LA(LS(NUMBER_4)) F4                            &kp LA(R)       &sec_kp_kp LA(R) LA(A)          &sec_kp_kp LA(D) LA(V)  &kp LA(D)   &none  &bt BT_SEL 2
-&trans      &none  &sec_kp_kp LA(LS(NUMBER_5)) F5  &sec_kp_kp LA(LS(NUMBER_6)) F6   &sec_kp_kp LA(LS(NUMBER_7)) F7  &sec_kp_kp LA(LS(NUMBER_8)) F8                            &kp C_PREVIOUS  &kp C_VOLUME_DOWN               &kp C_VOLUME_UP         &kp C_NEXT  &none  &bt BT_SEL 1
-&outs       &none  &sec_kp_kp LA(LS(NUMBER_9)) F9  &sec_kp_kp LA(LS(NUMBER_0)) F10  &sec_kp_kp LA(LS(MINUS)) F11    &sec_kp_kp LA(LS(EQUAL)) F12    &switch_en    &switch_ru  &none           &sec_kp_kp K_MUTE C_PLAY_PAUSE  &none                   &none       &none  &bt BT_SEL 0
-                                                                                    &trans                          &trans                          &trans        &trans      &trans          &trans
+&bt BT_CLR  &none  &sec_kp_kp LA(LS(NUMBER_1)) F1  &sec_kp_kp LA(LS(NUMBER_2)) F2   &sec_kp_kp LA(LS(NUMBER_3)) F3  &sec_kp_kp LA(LS(NUMBER_4)) F4                    &kp LA(R)       &sec_kp_kp LA(R) LA(A)          &sec_kp_kp LA(D) LA(V)  &kp LA(D)   &none  &none
+&trans      &none  &sec_kp_kp LA(LS(NUMBER_5)) F5  &sec_kp_kp LA(LS(NUMBER_6)) F6   &sec_kp_kp LA(LS(NUMBER_7)) F7  &sec_kp_kp LA(LS(NUMBER_8)) F8                    &kp C_PREVIOUS  &kp C_VOLUME_DOWN               &kp C_VOLUME_UP         &kp C_NEXT  &none  &none
+&outs       &none  &sec_kp_kp LA(LS(NUMBER_9)) F9  &sec_kp_kp LA(LS(NUMBER_0)) F10  &sec_kp_kp LA(LS(MINUS)) F11    &sec_kp_kp LA(LS(EQUAL)) F12    &none     &none   &none           &sec_kp_kp K_MUTE C_PLAY_PAUSE  &none                   &none       &none  &bt BT_SEL 0
+                                                                                    &trans                          &trans                          &trans    &trans  &trans          &trans
             >;
 
             display-name = "Adjust";
