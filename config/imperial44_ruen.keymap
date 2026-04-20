@@ -378,8 +378,9 @@
             #binding-cells = <1>;
             bindings =
                 <&to_en>,
-                <&macro_wait_time 200>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER &to_ru>;
+                <&macro_tap>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&to_ru>;
 
             label = "EN";
             wait-ms = <0>;
