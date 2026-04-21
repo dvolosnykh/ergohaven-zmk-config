@@ -273,6 +273,20 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        slashes: slashes {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SLASHES";
+            #binding-cells = <0>;
+            bindings = <&kp SLASH>, <&kp BACKSLASH>;
+        };
+
+        slashes_ru: slashes_ru {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SLASHES_RU";
+            #binding-cells = <0>;
+            bindings = <&kp RU_SLASH>, <&kp RU_BACKSLASH>;
+        };
     };
 
     combos {
@@ -613,7 +627,7 @@
         nav_mac {
             bindings = <
 &kp LC(BACKSLASH)  &none  &kp LC(B)               &kp LC(W)               &kp LA(D)               &kp LC(U)                                                                           &none                     &none                         &none                           &none                       &kp DELETE      &trans
-&none              &none  &kp LC(F)               &sec_kp_kp LC(R) LC(P)  &kp LC(N)               &kp LC(D)                                                                           &sec_kp_kp LG(LEFT) LEFT  &sec_kp_kp LG(DOWN) DOWN      &sec_kp_kp LG(UP) UP            &sec_kp_kp LG(RIGHT) RIGHT  &kp LA(DELETE)  &kp LA(BACKSPACE)
+&toggle_lang       &none  &kp LC(F)               &sec_kp_kp LC(R) LC(P)  &kp LC(N)               &kp LC(D)                                                                           &sec_kp_kp LG(LEFT) LEFT  &sec_kp_kp LG(DOWN) DOWN      &sec_kp_kp LG(UP) UP            &sec_kp_kp LG(RIGHT) RIGHT  &kp LA(DELETE)  &kp LA(BACKSPACE)
 &trans             &none  &sec_kp_kp LC(U) LC(B)  &sec_kp_kp LC(A) LA(B)  &sec_kp_kp LC(E) LA(F)  &sec_kp_kp LC(K) LC(F)  &sec_kp_kp LC(Z) LC(C)    &sec_kp_kp LG(LS(N5)) LG(LS(N4))  &kp LEFT                  &sec_kp_kp LG(LEFT) LA(LEFT)  &sec_kp_kp LG(RIGHT) LA(RIGHT)  &kp RIGHT                   &none           &trans
                                                                           &trans                  &trans                  &trans                    &trans                            &mo_kp 8 LA(SPACE)        &trans
             >;
@@ -632,19 +646,19 @@
 
         en_sym {
             bindings = <
-&swi    &kp LS(Q)   &sec_kp_kp LC(KP_N1) N1  &sec_kp_kp LC(KP_N2) N2  &sec_kp_kp LC(KP_N3) N3  &plus_alt                                                                  &kp AMPERSAND                &kp PIPE       &braces    &none                   &none      &none
-&trans  &kp HASH    &sec_kp_kp LC(KP_N4) N4  &sec_kp_kp LC(KP_N5) N5  &sec_kp_kp LC(KP_N6) N6  &kp MINUS                                                                  &sec_kp_kp PERCENT ASTERISK  &caret_dollar  &brackets  &parenth                &colons    &quotes
-&trans  &kp DOLLAR  &sec_kp_kp LC(KP_N7) N7  &sec_kp_kp LC(KP_N8) N8  &sec_kp_kp LC(KP_N9) N9  &sec_kp_kp LC(KP_N0) N0  &kp KP_DOT    &sec_kp_kp LC(BACKSLASH) BACKSLASH  &kp KP_SLASH                 &lt_gt         &eq_not    &sec_kp_kp TILDE UNDER  &sent_end  &sk LALT
-                                                                      &trans                   &mo 8                    &trans        &trans                              &trans                       &trans
+&swi    &kp LS(Q)   &sec_kp_kp LC(KP_N1) N1  &sec_kp_kp LC(KP_N2) N2  &sec_kp_kp LC(KP_N3) N3  &plus_alt                                      &kp AMPERSAND                &kp PIPE       &braces    &none                   &none      &none
+&trans  &kp HASH    &sec_kp_kp LC(KP_N4) N4  &sec_kp_kp LC(KP_N5) N5  &sec_kp_kp LC(KP_N6) N6  &kp MINUS                                      &sec_kp_kp PERCENT ASTERISK  &caret_dollar  &brackets  &parenth                &colons    &quotes
+&trans  &kp DOLLAR  &sec_kp_kp LC(KP_N7) N7  &sec_kp_kp LC(KP_N8) N8  &sec_kp_kp LC(KP_N9) N9  &sec_kp_kp LC(KP_N0) N0  &kp KP_DOT    &none   &slashes                     &lt_gt         &eq_not    &sec_kp_kp TILDE UNDER  &sent_end  &sk LALT
+                                                                      &trans                   &mo 8                    &trans        &trans  &trans                       &trans
             >;
         };
 
         ru_sym {
             bindings = <
-&swi_ru  &en LS(Q)       &trans  &trans  &trans  &trans                                                &ampersand_ru               &pipe_ru          &braces_ru    &trans  &trans      &trans
-&trans   &num HASH HASH  &trans  &trans  &trans  &trans                                                &sec_kp_en DOLLAR ASTERISK  &caret_dollar_ru  &brackets_ru  &trans  &colons_ru  &quotes_ru
-&trans   &en DOLLAR      &trans  &trans  &trans  &trans  &trans    &sec_en_en LC(BACKSLASH) BACKSLASH  &trans                      &lt_gt_ru         &trans        &trans  &trans      &trans
-                                         &trans  &trans  &trans    &trans                              &trans                      &trans
+&swi_ru  &en LS(Q)       &trans  &trans  &trans  &trans                    &ampersand_ru               &pipe_ru          &braces_ru    &trans  &trans      &trans
+&trans   &num HASH HASH  &trans  &trans  &trans  &trans                    &sec_kp_en DOLLAR ASTERISK  &caret_dollar_ru  &brackets_ru  &trans  &colons_ru  &quotes_ru
+&trans   &en DOLLAR      &trans  &trans  &trans  &trans  &trans    &trans  &slashes_ru                 &lt_gt_ru         &trans        &trans  &trans      &trans
+                                         &trans  &trans  &trans    &trans  &trans                      &trans
             >;
         };
 
