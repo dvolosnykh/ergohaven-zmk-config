@@ -543,7 +543,7 @@
         toggle_layout: toggle_layout {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&toggle_lang &tog 3>;
+            bindings = <&toggle_lang &tog 2>;
             label = "TOGGLE_LAYOUT";
             wait-ms = <0>;
             tap-ms = <30>;
@@ -678,17 +678,17 @@
         compatible = "zmk,conditional-layers";
 
         override_sym_for_ru {
-            if-layers = <3 6>;
+            if-layers = <6 2>;
             then-layer = <7>;
         };
 
         fix_ru_for_other {
-            if-layers = <3 1>;
-            then-layer = <4>;
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
 
         override_nav_for_other {
-            if-layers = <4 1>;
+            if-layers = <1 4>;
             then-layer = <5>;
         };
     };
