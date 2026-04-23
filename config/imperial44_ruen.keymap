@@ -534,7 +534,7 @@
         toggle_lang: toggle_lang {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(SPACE)>;
+            bindings = <&kp LG(LC(SPACE))>;
             label = "TOGGLE_LANG";
             wait-ms = <0>;
             tap-ms = <30>;
