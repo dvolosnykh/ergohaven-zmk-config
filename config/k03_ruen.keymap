@@ -673,7 +673,7 @@
             bindings = <
 &trans   &trans          &trans  &trans  &trans  &trans                    &trans                      &trans            &trans        &trans  &trans      &trans
 &swi_ru  &en LS(Q)       &trans  &trans  &trans  &trans                    &ampersand_ru               &pipe_ru          &braces_ru    &trans  &trans      &trans
-&trans   &num HASH HASH  &trans  &trans  &trans  &trans                    &sec_kp_kp DOLLAR ASTERISK  &caret_dollar_ru  &brackets_ru  &trans  &colons_ru  &quotes_ru
+&trans   &num HASH HASH  &trans  &trans  &trans  &trans                    &sec_kp_en DOLLAR ASTERISK  &caret_dollar_ru  &brackets_ru  &trans  &colons_ru  &quotes_ru
 &trans   &en DOLLAR      &trans  &trans  &trans  &trans  &trans    &trans  &slashes_ru_mac             &lt_gt_ru         &trans        &trans  &trans      &trans
                          &trans  &trans  &trans  &trans  &trans    &trans  &trans                      &trans            &trans        &trans
             >;
@@ -681,11 +681,11 @@
 
         ru_sym_other {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans             &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans             &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans             &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &slashes_ru_other  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans             &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &sec_kp_kp DOLLAR ASTERISK  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &slashes_ru_other           &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans    &trans  &trans                      &trans  &trans  &trans
             >;
         };
 
