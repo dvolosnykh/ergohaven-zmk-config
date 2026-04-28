@@ -105,9 +105,9 @@
             bindings = <&kp COLON>, <&kp SEMICOLON>;
         };
 
-        colons_ru: colons_ru {
+        colons_ru_mac: colons_ru_mac {
             compatible = "zmk,behavior-tap-dance";
-            label = "COLONS_RU";
+            label = "COLONS_RU_MAC";
             #binding-cells = <0>;
             bindings = <&kp PERCENT>, <&kp ASTERISK>;
         };
@@ -198,16 +198,6 @@
             flavor = "tap-preferred";
         };
 
-        sec_en_en: sec_en_en {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SEC_EN_EN";
-            bindings = <&en>, <&en>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-        };
-
         layer_activate: layer_activate {
             compatible = "zmk,behavior-toggle-layer";
             label = "LAYER_ACTIVATE";
@@ -286,6 +276,13 @@
             label = "SLASHES_RU_MAC";
             #binding-cells = <0>;
             bindings = <&en SLASH>, <&en BACKSLASH>;
+        };
+
+        colons_ru_other: colons_ru_other {
+            compatible = "zmk,behavior-tap-dance";
+            label = "COLONS_RU_OTHER";
+            #binding-cells = <0>;
+            bindings = <&kp CARET>, <&kp DOLLAR>;
         };
     };
 
@@ -671,20 +668,20 @@
 
         ru_sym_mac {
             bindings = <
-&trans   &trans          &trans  &trans  &trans  &trans                    &trans                      &trans            &trans        &trans  &trans      &trans
-&swi_ru  &en LS(Q)       &trans  &trans  &trans  &trans                    &ampersand_ru               &pipe_ru          &braces_ru    &trans  &trans      &trans
-&trans   &num HASH HASH  &trans  &trans  &trans  &trans                    &sec_kp_en DOLLAR ASTERISK  &caret_dollar_ru  &brackets_ru  &trans  &colons_ru  &quotes_ru
-&trans   &en DOLLAR      &trans  &trans  &trans  &trans  &trans    &trans  &slashes_ru_mac             &lt_gt_ru         &trans        &trans  &trans      &trans
+&trans   &trans          &trans  &trans  &trans  &trans                    &trans                      &trans            &trans        &trans  &trans          &trans
+&swi_ru  &en LS(Q)       &trans  &trans  &trans  &trans                    &ampersand_ru               &pipe_ru          &braces_ru    &trans  &trans          &trans
+&trans   &num HASH HASH  &trans  &trans  &trans  &trans                    &sec_kp_en DOLLAR ASTERISK  &caret_dollar_ru  &brackets_ru  &trans  &colons_ru_mac  &quotes_ru
+&trans   &en DOLLAR      &trans  &trans  &trans  &trans  &trans    &trans  &slashes_ru_mac             &lt_gt_ru         &trans        &trans  &trans          &trans
                          &trans  &trans  &trans  &trans  &trans    &trans  &trans                      &trans            &trans        &trans
             >;
         };
 
         ru_sym_other {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans                       &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans                       &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &sec_kp_kp PERCENT ASTERISK  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &slashes_ru_other            &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans                       &trans  &trans  &trans  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans                       &trans  &trans  &trans  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &sec_kp_kp PERCENT ASTERISK  &trans  &trans  &trans  &colons_ru_other  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &slashes_ru_other            &trans  &trans  &trans  &trans            &trans
                 &trans  &trans  &trans  &trans  &trans    &trans  &trans                       &trans  &trans  &trans
             >;
         };
