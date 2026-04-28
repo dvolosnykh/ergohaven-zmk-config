@@ -182,7 +182,7 @@
         mt_en: mt_en {
             compatible = "zmk,behavior-hold-tap";
             label = "MT_EN";
-            bindings = <&kp>, <&en>;
+            bindings = <&kp>, <&en_stick>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -237,13 +237,6 @@
             tapping-term-ms = <300>;
         };
 
-        under_tilde: under_tilde {
-            compatible = "zmk,behavior-tap-dance";
-            label = "UNDER_TILDE";
-            #binding-cells = <0>;
-            bindings = <&kp UNDERSCORE>, <&kp TILDE>;
-        };
-
         cmd_lang: cmd_lang {
             compatible = "zmk,behavior-tap-dance";
             label = "CMD_LANG";
@@ -281,11 +274,18 @@
             bindings = <&kp SLASH>, <&kp BACKSLASH>;
         };
 
-        slashes_ru: slashes_ru {
+        slashes_ru_other: slashes_ru_other {
             compatible = "zmk,behavior-tap-dance";
-            label = "SLASHES_RU";
+            label = "SLASHES_RU_OTHER";
             #binding-cells = <0>;
             bindings = <&kp RU_SLASH>, <&kp RU_BACKSLASH>;
+        };
+
+        slashes_ru_mac: slashes_ru_mac {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SLASHES_RU_MAC";
+            #binding-cells = <0>;
+            bindings = <&en SLASH>, <&en BACKSLASH>;
         };
     };
 
@@ -580,6 +580,15 @@
             bindings = <&to_en &kp PIPE &to_ru>;
             label = "PIPE_RU";
         };
+
+        en_stick: en_stick {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&to_en &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            label = "EN_STICK";
+            wait-ms = <0>;
+            tap-ms = <30>;
+        };
     };
 
     keymap {
@@ -587,11 +596,11 @@
 
         en {
             bindings = <
-&trans        &trans  &trans  &trans  &trans      &trans                    &trans  &trans      &trans  &trans  &trans  &trans
-&sec_kp_kp LC(D) ESCAPE  &kp Q  &kp W  &kp E  &kp R      &kp T                                                        &kp Y        &kp U      &kp I    &kp O         &kp P      &kp BACKSPACE
-&mt LCTRL TAB            &kp A  &kp S  &kp D  &kp F      &kp G                                                        &kp H        &kp J      &kp K    &kp L         &colons    &pipe_ctrl_dash
-&mt LSHFT GRAVE          &kp Z  &kp X  &kp C  &kp V      &kp B        &kp DOT             &kp COMMA                   &kp N        &kp M      &eq_not  &under_tilde  &sent_end  &mt RSHFT AT
-                                &trans     &trans         &cmd_lang  &lt 4 SPACE  &dash_alt_hyphen    &sec_kp_kp LG(ENTER) ENTER  &lt 6 SPACE  &cmd_lang  &trans  &trans
+&trans                   &trans  &trans  &trans  &trans     &trans                                                       &trans       &trans     &trans   &trans          &trans     &trans
+&sec_kp_kp LC(D) ESCAPE  &kp Q   &kp W   &kp E   &kp R      &kp T                                                        &kp Y        &kp U      &kp I    &kp O           &kp P      &kp BACKSPACE
+&mt LCTRL TAB            &kp A   &kp S   &kp D   &kp F      &kp G                                                        &kp H        &kp J      &kp K    &kp L           &colons    &pipe_ctrl_dash
+&mt LSHFT GRAVE          &kp Z   &kp X   &kp C   &kp V      &kp B        &kp DOT             &kp COMMA                   &kp N        &kp M      &eq_not  &kp UNDERSCORE  &sent_end  &mt RSHFT AT
+                                 &trans  &trans  &cmd_lang  &lt 4 SPACE  &dash_alt_hyphen    &sec_kp_kp LG(ENTER) ENTER  &lt 6 SPACE  &cmd_lang  &trans   &trans
             >;
 
             display-name = "En";
@@ -603,38 +612,38 @@
 &trans        &trans  &trans  &trans  &trans      &trans                    &trans  &trans      &trans  &trans  &trans  &trans
 &mt LGUI TAB  &trans  &trans  &trans  &trans      &trans                    &trans  &trans      &trans  &trans  &trans  &pipe_cmd_dash
 &trans        &trans  &trans  &trans  &trans      &trans  &trans    &trans  &trans  &trans      &trans  &trans  &trans  &trans
-                                &trans   &trans   &ctrl_lang  &trans  &trans    &trans  &trans  &ctrl_lang  &trans  &trans
+                      &trans  &trans  &ctrl_lang  &trans  &trans    &trans  &trans  &ctrl_lang  &trans  &trans
             >;
         };
 
         ru_mac {
             display-name = "Ru_Mac";
             bindings = <
-&trans        &trans  &trans  &trans  &trans      &trans                    &trans  &trans      &trans  &trans  &trans  &trans
+&trans              &trans                   &trans                &trans              &trans              &trans                                          &trans              &trans               &trans               &trans                 &trans               &trans
 &trans              &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &twin_e_mac                                     &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE  &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_SHCHA  &kp RU_CYRILLIC_ZE   &trans
 &trans              &kp RU_CYRILLIC_EF       &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                              &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O    &kp RU_CYRILLIC_EL   &kp RU_CYRILLIC_DE     &kp RU_CYRILLIC_ZHE  &mt RCTRL RU_CYRILLIC_E
 &mt_en LSHFT GRAVE  &kp RU_CYRILLIC_YA       &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_I   &kp AMPERSAND    &kp CARET  &kp RU_CYRILLIC_TE  &twin_sign           &kp RU_CYRILLIC_BE   &kp RU_CYRILLIC_YU     &kp RU_CYRILLIC_HA   &mt_en RSHFT AT
-                              &trans   &trans                                                      &trans              &trans              &trans           &trans     &trans              &trans  &trans  &trans
+                                             &trans                &trans              &trans              &trans              &trans           &trans     &trans              &trans               &trans               &trans
             >;
         };
 
         ru_other {
             bindings = <
-&trans        &trans  &trans  &trans  &trans      &trans                    &trans  &trans      &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                     &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &twin_e_other                              &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                                     &trans  &trans  &trans  &trans  &trans  &mt LGUI RU_CYRILLIC_E
 &trans  &trans  &trans  &trans  &trans  &trans         &kp RU_DOT    &kp RU_COMMA  &trans  &trans  &trans  &trans  &trans  &trans
-                            &trans  &trans  &trans  &trans         &trans        &trans        &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans         &trans        &trans        &trans  &trans  &trans  &trans
             >;
         };
 
         nav_mac {
             bindings = <
-&trans        &trans  &trans  &trans  &trans      &trans                    &trans  &trans      &trans  &trans  &trans  &trans
+&trans             &trans       &trans                  &trans                  &trans                  &trans                                                                              &trans                    &trans                        &trans                          &trans                      &trans      &trans
 &kp LC(BACKSLASH)  &none        &kp LC(B)               &kp LC(W)               &kp LA(D)               &kp LC(U)                                                                           &none                     &none                         &kp LA(DELETE)                  &kp LA(BACKSPACE)           &kp DELETE  &trans
 &kp LG(TAB)        &kp LC(TAB)  &kp LC(F)               &sec_kp_kp LC(R) LC(P)  &kp LC(N)               &kp LC(D)                                                                           &sec_kp_kp LG(LEFT) LEFT  &sec_kp_kp LG(DOWN) DOWN      &sec_kp_kp LG(UP) UP            &sec_kp_kp LG(RIGHT) RIGHT  &none       &none
 &trans             &none        &sec_kp_kp LC(U) LC(B)  &sec_kp_kp LC(A) LA(B)  &sec_kp_kp LC(E) LA(F)  &sec_kp_kp LC(K) LC(F)  &sec_kp_kp LC(Z) LC(C)    &sec_kp_kp LG(LS(N5)) LG(LS(N4))  &kp LEFT                  &sec_kp_kp LG(LEFT) LA(LEFT)  &sec_kp_kp LG(RIGHT) LA(RIGHT)  &kp RIGHT                   &none       &trans
-                              &trans    &trans                                              &trans                  &trans                  &trans                    &trans                            &mo_kp 8 LA(SPACE)        &trans  &trans  &trans
+                                &trans                  &trans                  &trans                  &trans                  &trans                    &trans                            &mo_kp 9 LA(SPACE)        &trans                        &trans                          &trans
             >;
 
             display-name = "Nav_Mac";
@@ -642,41 +651,51 @@
 
         nav_other {
             bindings = <
-&trans        &trans  &trans  &trans  &trans      &trans                    &trans  &trans      &trans  &trans  &trans  &trans
+&trans  &trans       &trans  &trans  &trans  &trans                                                    &trans                    &trans               &trans              &trans                      &trans  &trans
 &trans  &kp LA(TAB)  &trans  &trans  &trans  &trans                                                    &trans                    &trans               &kp LC(DELETE)      &kp LC(BACKSPACE)           &trans  &trans
 &trans  &trans       &trans  &trans  &trans  &trans                                                    &sec_kp_kp LA(LEFT) LEFT  &sec_kp_kp END DOWN  &sec_kp_kp HOME UP  &sec_kp_kp LA(RIGHT) RIGHT  &trans  &trans
 &trans  &trans       &trans  &trans  &trans  &trans  &trans    &sec_kp_kp PRINTSCREEN LS(PRINTSCREEN)  &trans                    &kp LC(LEFT)         &kp LC(RIGHT)       &trans                      &trans  &trans
-                             &trans    &trans    &trans  &trans  &trans    &trans                                  &trans                    &trans  &trans  &trans
+                     &trans  &trans  &trans  &trans  &trans    &trans                                  &trans                    &trans               &trans              &trans
             >;
         };
 
         en_sym {
             bindings = <
-&trans        &trans  &trans  &trans  &trans      &trans                    &trans  &trans      &trans  &trans  &trans  &trans
+&trans  &trans      &trans                   &trans                   &trans                   &trans                                         &trans                       &trans         &trans     &trans                  &trans     &trans
 &swi    &kp LS(Q)   &sec_kp_kp LC(KP_N1) N1  &sec_kp_kp LC(KP_N2) N2  &sec_kp_kp LC(KP_N3) N3  &plus_alt                                      &kp AMPERSAND                &kp PIPE       &braces    &none                   &none      &none
 &trans  &kp HASH    &sec_kp_kp LC(KP_N4) N4  &sec_kp_kp LC(KP_N5) N5  &sec_kp_kp LC(KP_N6) N6  &kp MINUS                                      &sec_kp_kp PERCENT ASTERISK  &caret_dollar  &brackets  &parenth                &colons    &quotes
 &trans  &kp DOLLAR  &sec_kp_kp LC(KP_N7) N7  &sec_kp_kp LC(KP_N8) N8  &sec_kp_kp LC(KP_N9) N9  &sec_kp_kp LC(KP_N0) N0  &kp KP_DOT    &none   &slashes                     &lt_gt         &eq_not    &sec_kp_kp TILDE UNDER  &sent_end  &trans
-                                                               &trans    &trans   &trans                   &mo 8                    &trans        &trans  &trans                       &trans  &trans  &trans
+                    &trans                   &trans                   &trans                   &mo 9                    &trans        &trans  &trans                       &trans         &trans     &trans
             >;
         };
 
-        ru_sym {
+        ru_sym_mac {
             bindings = <
-&trans        &trans  &trans  &trans  &trans      &trans                    &trans  &trans      &trans  &trans  &trans  &trans
+&trans   &trans          &trans  &trans  &trans  &trans                    &trans                      &trans            &trans        &trans  &trans      &trans
 &swi_ru  &en LS(Q)       &trans  &trans  &trans  &trans                    &ampersand_ru               &pipe_ru          &braces_ru    &trans  &trans      &trans
-&trans   &num HASH HASH  &trans  &trans  &trans  &trans                    &sec_kp_en DOLLAR ASTERISK  &caret_dollar_ru  &brackets_ru  &trans  &colons_ru  &quotes_ru
-&trans   &en DOLLAR      &trans  &trans  &trans  &trans  &trans    &trans  &slashes_ru                 &lt_gt_ru         &trans        &trans  &trans      &trans
-                                  &trans    &trans   &trans  &trans  &trans    &trans  &trans                      &trans  &trans  &trans
+&trans   &num HASH HASH  &trans  &trans  &trans  &trans                    &sec_kp_kp DOLLAR ASTERISK  &caret_dollar_ru  &brackets_ru  &trans  &colons_ru  &quotes_ru
+&trans   &en DOLLAR      &trans  &trans  &trans  &trans  &trans    &trans  &slashes_ru_mac             &lt_gt_ru         &trans        &trans  &trans      &trans
+                         &trans  &trans  &trans  &trans  &trans    &trans  &trans                      &trans            &trans        &trans
+            >;
+        };
+
+        ru_sym_other {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans             &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans             &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans             &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &slashes_ru_other  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans    &trans  &trans             &trans  &trans  &trans
             >;
         };
 
         adjust {
             bindings = <
-&trans        &trans  &trans  &trans  &trans      &trans                    &trans  &trans      &trans  &trans  &trans  &trans
-&bt BT_CLR    &none  &sec_kp_kp LA(LS(NUMBER_1)) F1  &sec_kp_kp LA(LS(NUMBER_2)) F2   &sec_kp_kp LA(LS(NUMBER_3)) F3  &sec_kp_kp LA(LS(NUMBER_4)) F4                    &kp LA(R)                       &kp LA(A)          &kp LA(V)        &kp LA(D)   &none  &none
-&toggle_lang  &none  &sec_kp_kp LA(LS(NUMBER_5)) F5  &sec_kp_kp LA(LS(NUMBER_6)) F6   &sec_kp_kp LA(LS(NUMBER_7)) F7  &sec_kp_kp LA(LS(NUMBER_8)) F8                    &kp C_PREVIOUS                  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_NEXT  &none  &none
-&outs         &none  &sec_kp_kp LA(LS(NUMBER_9)) F9  &sec_kp_kp LA(LS(NUMBER_0)) F10  &sec_kp_kp LA(LS(MINUS)) F11    &sec_kp_kp LA(LS(EQUAL)) F12    &none     &none   &sec_kp_kp K_MUTE C_PLAY_PAUSE  &none              &none            &none       &none  &none
-                                                                           &trans    &trans       &trans                          &trans                          &trans    &trans  &trans                          &trans  &trans  &trans
+&trans        &trans  &trans                          &trans                           &trans                          &trans                                            &trans                          &trans             &trans           &trans      &trans  &trans
+&bt BT_CLR    &none   &sec_kp_kp LA(LS(NUMBER_1)) F1  &sec_kp_kp LA(LS(NUMBER_2)) F2   &sec_kp_kp LA(LS(NUMBER_3)) F3  &sec_kp_kp LA(LS(NUMBER_4)) F4                    &kp LA(R)                       &kp LA(A)          &kp LA(V)        &kp LA(D)   &none   &none
+&toggle_lang  &none   &sec_kp_kp LA(LS(NUMBER_5)) F5  &sec_kp_kp LA(LS(NUMBER_6)) F6   &sec_kp_kp LA(LS(NUMBER_7)) F7  &sec_kp_kp LA(LS(NUMBER_8)) F8                    &kp C_PREVIOUS                  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_NEXT  &none   &none
+&outs         &none   &sec_kp_kp LA(LS(NUMBER_9)) F9  &sec_kp_kp LA(LS(NUMBER_0)) F10  &sec_kp_kp LA(LS(MINUS)) F11    &sec_kp_kp LA(LS(EQUAL)) F12    &none     &none   &sec_kp_kp K_MUTE C_PLAY_PAUSE  &none              &none            &none       &none   &none
+                      &trans                          &trans                           &trans                          &trans                          &trans    &trans  &trans                          &trans             &trans           &trans
             >;
 
             display-name = "Adjust";
@@ -699,6 +718,11 @@
         override_nav_for_other {
             if-layers = <1 4>;
             then-layer = <5>;
+        };
+
+        override_sym_ru_for_other {
+            if-layers = <1 7>;
+            then-layer = <8>;
         };
     };
 };
