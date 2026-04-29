@@ -689,10 +689,10 @@
 
         ru_sym_other {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans             &trans  &trans  &trans  &trans            &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans             &trans  &trans  &trans  &trans            &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &asterisk_percent  &trans  &trans  &trans  &colons_ru_other  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &slashes_ru_other  &trans  &trans  &trans  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans             &trans  &trans  &trans  &trans              &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans             &trans  &trans  &trans  &trans              &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &asterisk_percent  &trans  &trans  &trans  &colons_ru_other    &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &slashes_ru_other  &trans  &trans  &trans  &sent_end_ru_other  &trans
                 &trans  &trans  &trans  &trans  &trans    &trans  &trans             &trans  &trans  &trans
             >;
         };
