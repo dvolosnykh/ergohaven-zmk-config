@@ -188,16 +188,6 @@
             tapping-term-ms = <200>;
         };
 
-        sec_kp_en: sec_kp_en {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SEC_KP_EN";
-            bindings = <&kp>, <&en>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-        };
-
         layer_activate: layer_activate {
             compatible = "zmk,behavior-toggle-layer";
             label = "LAYER_ACTIVATE";
@@ -283,6 +273,20 @@
             label = "COLONS_RU_OTHER";
             #binding-cells = <0>;
             bindings = <&kp CARET>, <&kp DOLLAR>;
+        };
+
+        asterisk_percent: asterisk_percent {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ASTERISK_PERCENT";
+            #binding-cells = <0>;
+            bindings = <&kp ASTERISK>, <&kp PERCENT>;
+        };
+
+        asterisk_percent_ru_mac: asterisk_percent_ru_mac {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ASTERISK_PERCENT_RU_MAC";
+            #binding-cells = <0>;
+            bindings = <&en ASTERISK>, <&kp DOLLAR>;
         };
     };
 
@@ -658,31 +662,31 @@
 
         en_sym {
             bindings = <
-&trans  &trans      &trans                   &trans                   &trans                   &trans                                         &trans                       &trans         &trans     &trans                  &trans     &trans
-&swi    &kp LS(Q)   &sec_kp_kp LC(KP_N1) N1  &sec_kp_kp LC(KP_N2) N2  &sec_kp_kp LC(KP_N3) N3  &plus_alt                                      &kp AMPERSAND                &kp PIPE       &braces    &none                   &none      &none
-&trans  &kp HASH    &sec_kp_kp LC(KP_N4) N4  &sec_kp_kp LC(KP_N5) N5  &sec_kp_kp LC(KP_N6) N6  &kp MINUS                                      &sec_kp_kp PERCENT ASTERISK  &caret_dollar  &brackets  &parenth                &colons    &quotes
-&trans  &kp DOLLAR  &sec_kp_kp LC(KP_N7) N7  &sec_kp_kp LC(KP_N8) N8  &sec_kp_kp LC(KP_N9) N9  &sec_kp_kp LC(KP_N0) N0  &kp KP_DOT    &none   &slashes                     &lt_gt         &eq_not    &sec_kp_kp TILDE UNDER  &sent_end  &trans
-                    &trans                   &trans                   &trans                   &mo 9                    &trans        &trans  &trans                       &trans         &trans     &trans
+&trans  &trans      &trans                   &trans                   &trans                   &trans                                         &trans             &trans         &trans     &trans          &trans     &trans
+&swi    &kp LS(Q)   &sec_kp_kp LC(KP_N1) N1  &sec_kp_kp LC(KP_N2) N2  &sec_kp_kp LC(KP_N3) N3  &plus_alt                                      &kp AMPERSAND      &kp PIPE       &braces    &none           &none      &none
+&trans  &kp HASH    &sec_kp_kp LC(KP_N4) N4  &sec_kp_kp LC(KP_N5) N5  &sec_kp_kp LC(KP_N6) N6  &kp MINUS                                      &asterisk_percent  &caret_dollar  &brackets  &parenth        &colons    &quotes
+&trans  &kp DOLLAR  &sec_kp_kp LC(KP_N7) N7  &sec_kp_kp LC(KP_N8) N8  &sec_kp_kp LC(KP_N9) N9  &sec_kp_kp LC(KP_N0) N0  &kp KP_DOT    &none   &slashes           &lt_gt         &eq_not    &kp UNDERSCORE  &sent_end  &trans
+                    &trans                   &trans                   &trans                   &mo 9                    &trans        &trans  &trans             &trans         &trans     &trans
             >;
         };
 
         ru_sym_mac {
             bindings = <
-&trans   &trans          &trans  &trans  &trans  &trans                    &trans                      &trans            &trans        &trans  &trans          &trans
-&swi_ru  &en LS(Q)       &trans  &trans  &trans  &trans                    &ampersand_ru               &pipe_ru          &braces_ru    &trans  &trans          &trans
-&trans   &num HASH HASH  &trans  &trans  &trans  &trans                    &sec_kp_en DOLLAR ASTERISK  &caret_dollar_ru  &brackets_ru  &trans  &colons_ru_mac  &quotes_ru
-&trans   &en DOLLAR      &trans  &trans  &trans  &trans  &trans    &trans  &slashes_ru_mac             &lt_gt_ru         &trans        &trans  &trans          &trans
-                         &trans  &trans  &trans  &trans  &trans    &trans  &trans                      &trans            &trans        &trans
+&trans   &trans          &trans  &trans  &trans  &trans                    &trans                    &trans            &trans        &trans  &trans          &trans
+&swi_ru  &en LS(Q)       &trans  &trans  &trans  &trans                    &ampersand_ru             &pipe_ru          &braces_ru    &trans  &trans          &trans
+&trans   &num HASH HASH  &trans  &trans  &trans  &trans                    &asterisk_percent_ru_mac  &caret_dollar_ru  &brackets_ru  &trans  &colons_ru_mac  &quotes_ru
+&trans   &en DOLLAR      &trans  &trans  &trans  &trans  &trans    &trans  &slashes_ru_mac           &lt_gt_ru         &trans        &trans  &trans          &trans
+                         &trans  &trans  &trans  &trans  &trans    &trans  &trans                    &trans            &trans        &trans
             >;
         };
 
         ru_sym_other {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans                       &trans  &trans  &trans  &trans            &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans                       &trans  &trans  &trans  &trans            &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &sec_kp_kp PERCENT ASTERISK  &trans  &trans  &trans  &colons_ru_other  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &slashes_ru_other            &trans  &trans  &trans  &trans            &trans
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans                       &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans             &trans  &trans  &trans  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans             &trans  &trans  &trans  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &asterisk_percent  &trans  &trans  &trans  &colons_ru_other  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &slashes_ru_other  &trans  &trans  &trans  &trans            &trans
+                &trans  &trans  &trans  &trans  &trans    &trans  &trans             &trans  &trans  &trans
             >;
         };
 
