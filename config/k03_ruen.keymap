@@ -288,6 +288,13 @@
             #binding-cells = <0>;
             bindings = <&en ASTERISK>, <&kp DOLLAR>;
         };
+
+        sent_end_ru_other: sent_end_ru_other {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SENT_END_RU_OTHER";
+            #binding-cells = <0>;
+            bindings = <&kp AMPERSAND>, <&kp EXCLAMATION>;
+        };
     };
 
     combos {
