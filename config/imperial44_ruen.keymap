@@ -656,7 +656,7 @@
             bindings = <
 &trans  &kp LA(TAB)  &trans  &trans  &trans  &trans                                                    &trans                    &trans               &kp LC(DELETE)      &kp LC(BACKSPACE)           &trans  &trans
 &trans  &trans       &trans  &trans  &trans  &trans                                                    &sec_kp_kp LA(LEFT) LEFT  &sec_kp_kp END DOWN  &sec_kp_kp HOME UP  &sec_kp_kp LA(RIGHT) RIGHT  &trans  &trans
-&trans  &trans       &trans  &trans  &trans  &trans  &trans    &sec_kp_kp PRINTSCREEN LS(PRINTSCREEN)  &trans                    &kp LC(LEFT)         &kp LC(RIGHT)       &trans                      &trans  &trans
+&trans  &trans       &trans  &trans  &trans  &trans  &trans    &sec_kp_kp PRINTSCREEN LA(PRINTSCREEN)  &trans                    &kp LC(LEFT)         &kp LC(RIGHT)       &trans                      &trans  &trans
                                      &trans  &trans  &trans    &trans                                  &trans                    &trans
             >;
         };
