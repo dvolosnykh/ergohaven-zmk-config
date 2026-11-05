@@ -650,10 +650,10 @@
 
         nav_mac {
             bindings = <
-&kp LC(BACKSLASH)  &none  &kp LC(B)               &kp LC(W)               &kp LA(D)               &kp LC(U)                                                                           &none                     &none                         &kp LA(DELETE)                  &kp LA(BACKSPACE)           &kp DELETE  &trans
-&trans             &none  &kp LC(F)               &sec_kp_kp LC(R) LC(P)  &kp LC(N)               &kp LC(D)                                                                           &sec_kp_kp LG(LEFT) LEFT  &sec_kp_kp LG(DOWN) DOWN      &sec_kp_kp LG(UP) UP            &sec_kp_kp LG(RIGHT) RIGHT  &none       &kp LCTRL
-&trans             &none  &sec_kp_kp LC(U) LC(B)  &sec_kp_kp LC(A) LA(B)  &sec_kp_kp LC(E) LA(F)  &sec_kp_kp LC(K) LC(F)  &sec_kp_kp LC(Z) LC(C)    &sec_kp_kp LG(LS(N5)) LG(LS(N4))  &kp LEFT                  &sec_kp_kp LG(LEFT) LA(LEFT)  &sec_kp_kp LG(RIGHT) LA(RIGHT)  &kp RIGHT                   &none       &trans
-                                                                          &trans                  &trans                  &trans                    &trans                            &mo_kp 9 LA(SPACE)        &trans
+&kp LC(BACKSLASH)  &none  &kp LC(B)                 &kp LC(W)                 &kp LA(D)                 &kp LC(U)                                                                                 &none                     &none                           &kp LA(DELETE)                    &kp LA(BACKSPACE)           &kp DELETE     &trans
+&trans             &none  &kp LC(F)                 &sec_kp_kp (LC(R)) LC(P)  &kp LC(N)                 &kp LC(D)                                                                                 &sec_kp_kp LG(LEFT) LEFT  &sec_kp_kp LG(DOWN) DOWN        &sec_kp_kp LG(UP) UP              &sec_kp_kp LG(RIGHT) RIGHT  &kp PAGE_UP    &kp LCTRL
+&trans             &none  &sec_kp_kp (LC(U)) LC(B)  &sec_kp_kp (LC(A)) LA(B)  &sec_kp_kp (LC(E)) LA(F)  &sec_kp_kp (LC(K)) LC(F)  &sec_kp_kp (LC(Z)) LC(C)    &sec_kp_kp (LG(LS(N5))) LG(LS(N4))  &kp LEFT                  &sec_kp_kp (LG(LEFT)) LA(LEFT)  &sec_kp_kp (LG(RIGHT)) LA(RIGHT)  &kp RIGHT                   &kp PAGE_DOWN  &trans
+                                                                              &trans                    &trans                    &trans                      &trans                              &mo_kp (9) LA(SPACE)      &trans
             >;
 
             display-name = "Nav_Mac";
@@ -661,10 +661,10 @@
 
         nav_other {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                                                    &trans                    &trans                    &kp LC(DELETE)            &kp LC(BACKSPACE)           &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                                    &sec_kp_kp LA(LEFT) LEFT  &sec_kp_kp END DOWN       &sec_kp_kp HOME UP        &sec_kp_kp LA(RIGHT) RIGHT  &trans  &kp LGUI
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &sec_kp_kp PRINTSCREEN LA(PRINTSCREEN)  &trans                    &sec_kp_kp HOME LC(LEFT)  &sec_kp_kp END LC(RIGHT)  &trans                      &trans  &trans
-                                &trans  &trans  &trans    &trans                                  &trans                    &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                      &trans                    &trans                      &kp LC(DELETE)              &kp LC(BACKSPACE)           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                      &sec_kp_kp LA(LEFT) LEFT  &sec_kp_kp END DOWN         &sec_kp_kp HOME UP          &sec_kp_kp LA(RIGHT) RIGHT  &trans  &kp LGUI
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &sec_kp_kp (PRINTSCREEN) LA(PRINTSCREEN)  &trans                    &sec_kp_kp (HOME) LC(LEFT)  &sec_kp_kp (END) LC(RIGHT)  &trans                      &trans  &trans
+                                &trans  &trans  &trans    &trans                                    &trans                    &trans
             >;
         };
 
