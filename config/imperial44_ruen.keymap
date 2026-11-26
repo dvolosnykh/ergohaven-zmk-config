@@ -302,6 +302,13 @@
             #binding-cells = <0>;
             bindings = <&kp UNDERSCORE>, <&kp TILDE>;
         };
+
+        bt_clear: bt_clear {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BT_CLEAR";
+            #binding-cells = <0>;
+            bindings = <&none>, <&bt BT_CLR>;
+        };
     };
 
     combos {
@@ -697,9 +704,9 @@
 
         adjust {
             bindings = <
-&bt BT_CLR    &none  &sec_kp_kp LA(LS(NUMBER_1)) F1  &sec_kp_kp LA(LS(NUMBER_2)) F2   &sec_kp_kp LA(LS(NUMBER_3)) F3  &sec_kp_kp LA(LS(NUMBER_4)) F4                    &kp LA(R)                       &kp LA(A)          &kp LA(V)        &kp LA(D)   &none  &kp LC(LA(DELETE))
+&none         &none  &sec_kp_kp LA(LS(NUMBER_1)) F1  &sec_kp_kp LA(LS(NUMBER_2)) F2   &sec_kp_kp LA(LS(NUMBER_3)) F3  &sec_kp_kp LA(LS(NUMBER_4)) F4                    &kp LA(R)                       &kp LA(A)          &kp LA(V)        &kp LA(D)   &none  &kp LC(LA(DELETE))
 &toggle_lang  &none  &sec_kp_kp LA(LS(NUMBER_5)) F5  &sec_kp_kp LA(LS(NUMBER_6)) F6   &sec_kp_kp LA(LS(NUMBER_7)) F7  &sec_kp_kp LA(LS(NUMBER_8)) F8                    &kp C_PREVIOUS                  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_NEXT  &none  &none
-&outs         &none  &sec_kp_kp LA(LS(NUMBER_9)) F9  &sec_kp_kp LA(LS(NUMBER_0)) F10  &sec_kp_kp LA(LS(MINUS)) F11    &sec_kp_kp LA(LS(EQUAL)) F12    &none     &none   &sec_kp_kp K_MUTE C_PLAY_PAUSE  &none              &none            &none       &none  &trans
+&outs         &none  &sec_kp_kp LA(LS(NUMBER_9)) F9  &sec_kp_kp LA(LS(NUMBER_0)) F10  &sec_kp_kp LA(LS(MINUS)) F11    &sec_kp_kp LA(LS(EQUAL)) F12    &none     &none   &sec_kp_kp K_MUTE C_PLAY_PAUSE  &none              &none            &none       &none  &bt_clear
                                                                                       &trans                          &trans                          &trans    &trans  &trans                          &trans
             >;
 
